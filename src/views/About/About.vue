@@ -22,13 +22,13 @@
   }
 }
 #about-grid {
-  @apply grid mt-8;
+  @apply grid mt-8 gap-12;
   --columns: 1;
   grid-template-columns: repeat(var(--columns), 1fr);
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     --columns: 3;
-    @apply text-left;
+    @apply text-left mx-5 gap-4;
   }
 
   p {
