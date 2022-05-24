@@ -14,7 +14,7 @@
     </div>
     <ul id="mnav-items">
       <li class="item">
-        <RouterLink to="#top" class="selected">Startseite</RouterLink>
+        <RouterLink to="/">Startseite</RouterLink>
       </li>
       <li class="item">
         <RouterLink to="/ueberuns/">Über Uns</RouterLink>
@@ -109,6 +109,13 @@ export default {
       document.querySelector("#mobile-nav").classList.toggle("active");
     },
   },
-  mounted() {},
+  mounted() {
+    let items = document.querySelectorAll("#mnav-items > .item");
+    for (let item of items) {
+      item.addEventListener("click", () => {
+        document.querySelector("#mobile-nav").classList.remove("active");
+      });
+    }
+  },
 };
 </script>

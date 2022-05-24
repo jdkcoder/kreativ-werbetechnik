@@ -18,17 +18,9 @@ const router = createRouter({
   routes,
 });
 
-//   router.beforeEach((to, from, next) => {
-//     let hash = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9";
+router.beforeEach((to, from, next) => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 
-//     if (
-//       to.meta.needsAuth &&
-//       document.cookie == "" &&
-//       document.cookie.includes(hash) === false
-//     ) {
-//       next("/login");
-//     } else {
-//       next();
-//     }
-//   });
+  next();
+});
 export default router;
