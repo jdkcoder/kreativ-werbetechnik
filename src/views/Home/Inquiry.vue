@@ -29,6 +29,8 @@
         <span>Leistungen</span>
       </button>
     </div>
+
+    <GoTop />
   </section>
 </template>
 
@@ -112,9 +114,9 @@ p {
 
 <script>
 import BigTitle from "../../components/BigTitle.vue";
-
+import GoTop from "../../components/GoTop.vue";
 export default {
-  components: { BigTitle },
+  components: { BigTitle, GoTop },
 
   data() {
     return {

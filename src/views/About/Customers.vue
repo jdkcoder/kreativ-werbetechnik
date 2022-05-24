@@ -2,12 +2,14 @@
 
  <template>
   <section id="customer">
-    <BigTitle :text="text" :dark="false" />
-    <h1>Unsere Kunden</h1>
-    <p class="mx-6">
-      Jedes abgeschlossene Projekt macht uns noch hungriger, hungrig nach mehr
-      Designs und mehr Produktionen.
-    </p>
+    <div>
+      <BigTitle :text="text" :dark="false" class="big-text" />
+      <h1>Unsere Kunden</h1>
+      <p class="mx-6 md:mx-4">
+        Jedes abgeschlossene Projekt macht uns noch hungriger, hungrig nach mehr
+        Designs und mehr Produktionen.
+      </p>
+    </div>
     <div id="customers-grid">
       <div v-for="(item, index) in customers" :key="index">
         <img :src="item.img" alt="" />
@@ -22,12 +24,26 @@
 #customer {
   @apply relative text-center pb-8;
   color: #666;
+
+  @media (min-width: 768px) {
+    @apply grid grid-cols-2 py-12 text-left place-items-center px-32;
+  }
+}
+.big-text {
+  @media (min-width: 768px) {
+    @apply pt-0 text-left;
+  }
 }
 #customers-grid {
   --columns: 1;
-  @apply grid gap-8 mx-6 mt-2;
+  @apply grid gap-8 mx-6 mt-2 place-items-center;
   grid-template-columns: repeat(var(--columns), 1fr);
+
+  @media (min-width: 768px) {
+    --columns: 3;
+  }
 }
+
 h1 {
   color: #333;
   @apply relative text-center text-3xl font-bold mt-2 mb-8;
@@ -41,10 +57,15 @@ h1 {
     bottom: -1rem;
     left: 50%;
     transform: translateX(-50%);
+
+    @media (min-width: 768px) {
+      left: 0.25rem;
+      transform: translateX(0);
+    }
   }
 
   @media (min-width: 768px) {
-    @apply text-5xl;
+    @apply text-left mx-4 text-5xl;
   }
 }
 </style> 

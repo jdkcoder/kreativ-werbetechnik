@@ -16,6 +16,7 @@
   width: 2.5rem;
   height: 2.5rem;
   position: absolute;
+  z-index: 999;
   bottom: -3rem;
   left: 50%;
   transform: translateX(-50%);

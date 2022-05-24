@@ -19,19 +19,35 @@
   @apply text-center pb-20;
   background: #1b1d1f;
   color: #777;
+
+  @media (min-width: 768px) {
+    @apply px-32;
+  }
 }
 #achievements-grid {
   --columns: 1;
-  @apply grid gap-12 mt-8;
+  @apply grid gap-12 mt-8 pb-8;
   grid-template-columns: repeat(var(--columns), 1fr);
   color: #444;
 
+  @media (min-width: 768px) {
+    --columns: 3;
+  }
+
   div {
-    @apply flex flex-col gap-2;
+    @apply flex flex-col gap-2 mx-4 whitespace-nowrap;
 
     span {
       @apply text-4xl font-bold;
       color: #777;
+
+      @media (min-width: 1280px) {
+        @apply text-5xl;
+      }
+    }
+
+    strong {
+      @apply uppercase text-sm;
     }
   }
 
@@ -42,7 +58,7 @@
 
 h1 {
   color: #fff;
-  @apply relative text-center text-3xl font-bold mt-2 mb-8;
+  @apply relative text-center text-3xl font-bold mt-2 mb-12;
 
   &::after {
     content: "";
@@ -50,7 +66,7 @@ h1 {
     background: #fff;
     height: 2.5px;
     width: 6rem;
-    bottom: -1rem;
+    bottom: -1.5rem;
     left: 50%;
     transform: translateX(-50%);
   }

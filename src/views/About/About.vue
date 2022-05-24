@@ -1,5 +1,5 @@
  <template>
-  <div id="contents">
+  <div id="about">
     <BigTitle :text="text" :dark="false" />
     <h1>Warum Kreativ Werbetechnik</h1>
     <p>
@@ -19,18 +19,32 @@
 </template>
 
  <style lang='postcss' scoped>
-#contents {
-  @apply text-center px-4;
+#about {
+  @apply text-center px-4 pb-9;
   color: #666;
+
+  @media (min-width: 768px) {
+    @apply px-32;
+  }
 }
 #about-grid {
   @apply grid;
   --columns: 1;
   grid-template-columns: repeat(var(--columns), 1fr);
 
+  @media (min-width: 768px) {
+    --columns: 3;
+    @apply text-left;
+  }
+
   p {
-    @apply text-sm mx-4 font-normal;
-    line-height: 1.5;
+    @apply text-base mx-4 font-normal;
+    line-height: 1.8;
+  }
+  strong {
+    @media (min-width: 1024px) {
+      @apply text-sm;
+    }
   }
 }
 h1 {
@@ -49,15 +63,20 @@ h1 {
   }
 
   @media (min-width: 768px) {
-    @apply text-5xl;
+    @apply text-5xl mb-12;
   }
 }
 strong {
+  @apply mx-4;
   color: #333;
 }
 p {
-  @apply mb-8 mx-4;
+  @apply my-4 mx-4;
   font-size: 1.0625rem;
+
+  @media (min-width: 768px) {
+    @apply mb-8;
+  }
 }
 </style> 
 
