@@ -1,15 +1,8 @@
-<script setup>
-</script>
-
  <template>
   <section id="inquiry">
-    <BigTitle :text="bigTitle" :dark="true" />
-    <h1>So funktioniert's</h1>
-    <p>
-      Unsere Lieferzeiten in Deutschland betragen 3-4 Wochen ab Ihrer
-      Bestellung. Wir bieten auch einen Express Service mit 2 Wochen Lieferzeit
-      an.
-    </p>
+    <BigTitle :text="`ANFRAGE ERSTELLEN`" :dark="true" />
+    <MainTitle :text="`So funktioniert's`" :dark="true" />
+    <ShortDesc :text="desc" :dark="true" />
 
     <div id="inquiries-grid">
       <div v-for="(item, index) in inquiries" :key="index">
@@ -41,9 +34,6 @@
 
   @media (min-width: 768px) {
     @apply text-center;
-  }
-  @media (min-width: 1024px) {
-    @apply px-32;
   }
 
   &::after {
@@ -88,42 +78,21 @@
     color: #fff;
   }
 }
-h1 {
-  color: #fff;
-  @apply relative text-center text-3xl font-bold mt-2 mb-8;
-
-  &::after {
-    content: "";
-    @apply absolute;
-    background: #fff;
-    height: 2.5px;
-    width: 6rem;
-    bottom: -1rem;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  @media (min-width: 768px) {
-    @apply text-5xl;
-  }
-}
-p {
-  @apply text-center mx-4;
-  color: #777;
-  font-size: 1.0625rem;
-  line-height: 1.7;
-}
 </style> 
 
 <script>
 import BigTitle from "../../components/BigTitle.vue";
+import MainTitle from "../../components/MainTitle.vue";
 import GoTop from "../../components/GoTop.vue";
+import ShortDesc from "../../components/ShortDesc.vue";
 export default {
-  components: { BigTitle, GoTop },
+  components: { BigTitle, MainTitle, GoTop, ShortDesc },
 
   data() {
     return {
-      bigTitle: "ANFRAGE ERSTELLEN",
+      index: 0,
+      desc: `Unsere Lieferzeiten in Deutschland betragen 3-4 Wochen ab Ihrer
+      Bestellung. Wir bieten auch einen Express Service mit 2 Wochen Lieferzeit an.`,
       inquiries: [
         {
           icon: "fa-light fa-file",

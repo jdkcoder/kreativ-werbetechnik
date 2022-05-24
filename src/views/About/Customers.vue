@@ -2,15 +2,16 @@
 
  <template>
   <section id="customer">
-    <div>
-      <BigTitle :text="text" :dark="false" class="big-text" />
-      <h1>Unsere Kunden</h1>
-      <p class="mx-6 md:mx-4">
-        Jedes abgeschlossene Projekt macht uns noch hungriger, hungrig nach mehr
-        Designs und mehr Produktionen.
-      </p>
+    <div class="left">
+      <BigTitle
+        :text="'STOLZ, MIT ZU ARBEITEN'"
+        :dark="false"
+        :customer="true"
+      />
+      <MainTitle :text="'Unsere Kunden'" :dark="false" :customer="true" />
+      <ShortDesc :text="desc" :dark="false" :customer="true" />
     </div>
-    <div id="customers-grid">
+    <div class="right" id="customers-grid">
       <div v-for="(item, index) in customers" :key="index">
         <img :src="item.img" alt="" />
       </div>
@@ -26,14 +27,10 @@
   color: #666;
 
   @media (min-width: 768px) {
-    @apply grid grid-cols-2 py-12 text-left place-items-center px-32;
+    @apply grid grid-cols-2 py-12 place-items-center px-32;
   }
 }
-.big-text {
-  @media (min-width: 768px) {
-    @apply pt-0 text-left;
-  }
-}
+
 #customers-grid {
   --columns: 1;
   @apply grid gap-8 mx-6 mt-2 place-items-center;
@@ -43,43 +40,20 @@
     --columns: 3;
   }
 }
-
-h1 {
-  color: #333;
-  @apply relative text-center text-3xl font-bold mt-2 mb-8;
-
-  &::after {
-    content: "";
-    @apply absolute;
-    background: #296fc3;
-    height: 2.5px;
-    width: 6rem;
-    bottom: -1rem;
-    left: 50%;
-    transform: translateX(-50%);
-
-    @media (min-width: 768px) {
-      left: 0.25rem;
-      transform: translateX(0);
-    }
-  }
-
-  @media (min-width: 768px) {
-    @apply text-left mx-4 text-5xl;
-  }
-}
 </style> 
 
 <script>
 import GoTop from "../../components/GoTop.vue";
 import BigTitle from "../../components/BigTitle.vue";
+import MainTitle from "../../components/MainTitle.vue";
+import ShortDesc from "../../components/ShortDesc.vue";
 export default {
-  components: { BigTitle, GoTop },
+  components: { BigTitle, MainTitle, ShortDesc, GoTop },
 
   data() {
     return {
       index: 0,
-      text: "STOLZ, MIT ZU ARBEITEN",
+      desc: "Jedes abgeschlossene Projekt macht uns noch hungriger, hungrig nach mehr Designs und mehr Produktionen.",
       customers: [
         {
           img: "https://i.imgur.com/srd7ofD.jpg",

@@ -1,18 +1,21 @@
  <template>
-  <h2 :class="{ dark: dark, customer: customer }">{{ text }}</h2>
+  <p :class="{ dark: dark, customer: customer }">{{ text }}</p>
 </template>
 
  <style lang='postcss' scoped>
-h2 {
-  color: #ddd;
-  @apply text-2xl font-bold mx-4 pt-20 uppercase;
+p {
+  --clr: #666;
+  @apply text-center mx-4;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--clr);
 
   &.dark {
-    color: #444;
+    --clr: #777;
   }
   &.customer {
     @media (min-width: 1024px) {
-      @apply pt-0 mx-0 text-left;
+      @apply text-left mx-0;
     }
   }
 }

@@ -1,9 +1,9 @@
 
  <template>
   <section id="achievements">
-    <BigTitle :text="text" :dark="true" />
-    <h1>ANDERS UND ERFAHREN</h1>
-    <p>EINE AGENTUR DIE SIE VERSTEHT UND IHRE WÜNSCHE IN ERFÜLLUNG BRINGT.</p>
+    <BigTitle :text="'Werbung, die Sie nach vorne bringt!'" :dark="true" />
+    <MainTitle :text="'ANDERS UND ERFAHREN'" :dark="true" />
+    <ShortDesc :text="desc" :dark="true" />
     <div id="achievements-grid">
       <div v-for="(item, index) in achievements" :key="index">
         <i :class="'icon ' + item.icon"></i>
@@ -55,41 +55,19 @@
     @apply text-4xl;
   }
 }
-
-h1 {
-  color: #fff;
-  @apply relative text-center text-3xl font-bold mt-2 mb-12;
-
-  &::after {
-    content: "";
-    @apply absolute;
-    background: #fff;
-    height: 2.5px;
-    width: 6rem;
-    bottom: -1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  @media (min-width: 768px) {
-    @apply text-5xl;
-  }
-}
-
-p {
-  @apply mx-4;
-}
 </style> 
 
 <script>
 import BigTitle from "../../components/BigTitle.vue";
+import MainTitle from "../../components/MainTitle.vue";
+import ShortDesc from "../../components/ShortDesc.vue";
 export default {
-  components: { BigTitle },
+  components: { BigTitle, MainTitle, ShortDesc },
 
   data() {
     return {
       index: 0,
-      text: "Werbung, die Sie nach vorne bringt!",
+      desc: "EINE AGENTUR DIE SIE VERSTEHT UND IHRE WÜNSCHE IN ERFÜLLUNG BRINGT.",
       achievements: [
         {
           icon: "fa-regular fa-thumbs-up",

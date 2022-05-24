@@ -1,15 +1,8 @@
  <template>
   <section id="services">
-    <BigTitle :text="bigTitle" />
-
-    <h1>UNSERE LEISTUNGEN</h1>
-    <p>
-      Wir sind ein mittelständisches Unternehmen mit Sitz in Dreieich. Gegründet
-      2004, beschäftigten wir uns seit jeher mit der Herstellung von
-      Beschilderung und Werbemitteln für Industrie, Handel und den öffentlichen
-      Bereich und bieten ein umfangreiches Angebot an innovativen
-      Produktionsverfahren und Produkten.
-    </p>
+    <BigTitle :text="'HALLO WIR SIND KREATIV WERBETECHNIK'" :dark="false" />
+    <MainTitle :text="'UNSERE LEISTUNGEN'" :dark="false" />
+    <ShortDesc :text="desc" :dark="false" />
     <div id="something">
       <div class="services-grid">
         <div v-for="(service, index) in services" :key="index">
@@ -79,51 +72,24 @@
       }
     }
   }
-
-  h1 {
-    @apply relative text-3xl font-bold text-center mt-2 mb-6;
-    color: #333;
-
-    &::after {
-      --x: -50%;
-      --left: 50%;
-      content: "";
-      @apply absolute;
-      background-color: #0070c9;
-      height: 2.5px;
-      width: 6rem;
-      bottom: -1rem;
-      left: var(--left);
-      transform: translateX(var(--x));
-    }
-
-    @media (min-width: 768px) {
-      @apply text-5xl;
-    }
-  }
-  p {
-    @apply text-center mx-4;
-    font-size: 1.0625rem;
-    line-height: 1.7;
-    color: #666;
-  }
-  h1 + p {
-    @media (min-width: 1024px) {
-      @apply mx-32;
-    }
-  }
 }
 </style> 
 
 <script>
 import BigTitle from "../../components/BigTitle.vue";
+import MainTitle from "../../components/MainTitle.vue";
+import ShortDesc from "../../components/ShortDesc.vue";
 export default {
-  components: { BigTitle },
+  components: { BigTitle, MainTitle, ShortDesc },
 
   data() {
     return {
       index: 0,
-      bigTitle: "HALLO WIR SIND KREATIV WERBETECHNIK",
+      desc: `Wir sind ein mittelständisches Unternehmen mit Sitz in Dreieich. Gegründet
+      2004, beschäftigten wir uns seit jeher mit der Herstellung von
+      Beschilderung und Werbemitteln für Industrie, Handel und den öffentlichen
+      Bereich und bieten ein umfangreiches Angebot an innovativen
+      Produktionsverfahren und Produkten.`,
       services: [
         {
           icon: "fa-light fa-lightbulb",

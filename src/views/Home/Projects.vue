@@ -1,14 +1,9 @@
 
  <template>
   <section id="projects">
-    <BigTitle :text="bigTitle" />
-
-    <h1>Die Arbeit, die wir lieben</h1>
-
-    <p>
-      Wir glauben, dass unsere Arbeit für sich selbst spricht. Stöbern Sie unten
-      unter unseren neuesten Projekten.
-    </p>
+    <BigTitle :text="'UNSERE GROSSARTIGEN PROJEKTE'" :dark="false" />
+    <MainTitle :text="'Die Arbeit, die wir lieben'" :dark="false" />
+    <ShortDesc :text="desc" :dark="false" />
     <div id="projects-filters">
       <button
         type="button"
@@ -123,40 +118,20 @@
     }
   }
 }
-
-h1 {
-  @apply relative text-3xl font-bold mx-auto mt-2 mb-6 w-max;
-  color: #333;
-
-  &::after {
-    content: "";
-    @apply absolute;
-    background: #0070c9;
-    height: 2.5px;
-    width: 6rem;
-    bottom: -1rem;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-p {
-  @apply text-center mx-4;
-  font-size: 1.0625rem;
-  line-height: 1.7;
-  color: #666;
-}
 </style> 
 
 <script>
 import BigTitle from "../../components/BigTitle.vue";
+import MainTitle from "../../components/MainTitle.vue";
+import ShortDesc from "../../components/ShortDesc.vue";
 export default {
-  components: { BigTitle },
+  components: { BigTitle, MainTitle, ShortDesc },
 
   data() {
     return {
       index: 0,
       z: false,
-      bigTitle: "UNSERE GROSSARTIGEN PROJEKTE",
+      desc: `Wir glauben, dass unsere Arbeit für sich selbst spricht. Stöbern Sie unten unter unseren neuesten Projekten.`,
       projects: [
         {
           img: "https://i.imgur.com/OWb9sZa.jpg",
@@ -287,8 +262,7 @@ export default {
     flt(e) {
       let ctg = e.currentTarget.getAttribute("category-name");
       let z = this.projects.filter((i) => i.category === ctg);
-      let grid = document.querySelector("#project-grid");
-      grid.classList.add("clicked");
+
       if (ctg === "All") {
         this.z = false;
       } else {
