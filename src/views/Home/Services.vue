@@ -10,11 +10,16 @@
       Bereich und bieten ein umfangreiches Angebot an innovativen
       Produktionsverfahren und Produkten.
     </p>
-    <div class="services-grid">
-      <div v-for="(service, index) in services" :key="index">
-        <i :class="'icon ' + service.icon"></i>
-        <strong>{{ service.title }}</strong>
-        <p>{{ service.desc }}</p>
+    <div id="something">
+      <div class="services-grid">
+        <div v-for="(service, index) in services" :key="index">
+          <i :class="'icon ' + service.icon"></i>
+          <strong>{{ service.title }}</strong>
+          <p>{{ service.desc }}</p>
+        </div>
+      </div>
+      <div id="laptop">
+        <img src="https://i.imgur.com/zdAZc8i.png" alt="" />
       </div>
     </div>
   </section>
@@ -32,28 +37,46 @@
     background: #1f2223;
   }
 
-
-  .services-grid {
-    --columns: 1;
-    @apply mt-12 grid place-items-center text-center gap-8;
-    grid-template-columns: repeat(var(--columns), 1fr);
-
-    @media (min-width: 768px) {
-      --columns: 2;
+  #something {
+    @media (min-width: 1024px) {
+      @apply px-32;
     }
-    div {
-      @apply flex flex-col;
-      strong {
-        @apply text-sm m-4;
-      }
-      p {
-        @apply text-sm;
+    @media (min-width: 1280px) {
+      @apply px-0 flex ml-32 mt-8 gap-4;
+    }
+    #laptop {
+      @apply hidden;
+
+      @media (min-width: 1280px) {
+        @apply flex flex-1;
+        justify-content: flex-end;
       }
     }
 
-    .icon {
-      @apply text-4xl;
-      color: #296fc3;
+    .services-grid {
+      flex: 1.5;
+      --columns: 1;
+      @apply mt-12 grid place-items-center text-center gap-8;
+      grid-template-columns: repeat(var(--columns), 1fr);
+
+      @media (min-width: 768px) {
+        --columns: 2;
+      }
+
+      div {
+        @apply flex flex-col;
+        strong {
+          @apply text-sm m-4;
+        }
+        p {
+          @apply text-sm;
+        }
+      }
+
+      .icon {
+        @apply text-4xl;
+        color: #296fc3;
+      }
     }
   }
 
@@ -83,6 +106,11 @@
     font-size: 1.0625rem;
     line-height: 1.7;
     color: #666;
+  }
+  h1 + p {
+    @media (min-width: 1024px) {
+      @apply mx-32;
+    }
   }
 }
 </style> 

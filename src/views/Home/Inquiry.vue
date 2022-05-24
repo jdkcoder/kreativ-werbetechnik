@@ -42,6 +42,9 @@
   @media (min-width: 768px) {
     @apply text-center;
   }
+  @media (min-width: 1024px) {
+    @apply px-32;
+  }
 
   &::after {
     content: "";

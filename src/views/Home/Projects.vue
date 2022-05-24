@@ -46,6 +46,10 @@
  <style lang='postcss' scoped>
 #projects {
   @apply text-center pb-12;
+
+  @media (min-width: 1024px) {
+    @apply px-32;
+  }
 }
 #projects-filters {
   @apply grid gap-4 mx-4 mt-6;
