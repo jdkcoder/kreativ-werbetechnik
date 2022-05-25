@@ -110,7 +110,7 @@ nav {
           &.active {
             .sub-menu {
               overflow-y: auto;
-              height: 4rem;
+              height: 5.5rem;
               @apply ml-2 mt-2;
 
               &::-webkit-scrollbar {
