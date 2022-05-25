@@ -1,13 +1,16 @@
  <template>
   <HeroSection />
+  <Ribbon />
+  <Contents />
 </template>
 
- <style lang='scss' scoped>
-</style> 
-
 <script>
+import Contents from "./Contents.vue";
 import HeroSection from "./HeroSection.vue";
+import Ribbon from "./Ribbon.vue";
+
+Contents;
 export default {
-  components: { HeroSection },
+  components: { HeroSection, Contents, Ribbon },
 };
 </script>

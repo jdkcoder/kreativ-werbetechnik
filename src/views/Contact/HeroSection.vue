@@ -24,7 +24,10 @@
       object-fit: cover;
       width: 100%;
       height: 100%;
-      object-position: var(--position);
+
+      @media (min-width: 1654px) {
+        height: unset;
+      }
     }
   }
 }
