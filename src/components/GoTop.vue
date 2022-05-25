@@ -20,10 +20,12 @@
   bottom: -3rem;
   left: 50%;
   transform: translateX(-50%);
+  transition: all 0.4s ease-in-out;
 
   &:hover {
     -webkit-box-shadow: 0px -5px 5px rgb(0 0 0 / 10%);
     box-shadow: 0px -5px 5px rgb(0 0 0 / 10%);
+    transition: all 0.4s ease-in-out;
   }
 }
 </style> 

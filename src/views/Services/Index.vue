@@ -1,4 +1,5 @@
  <template>
+  <HeroSection />
   <Services />
   <OutdoorAds />
   <Foiling />
@@ -15,8 +16,9 @@ import OutdoorAds from "./OutdoorAds.vue";
 import Foiling from "./Foiling.vue";
 import Print from "./Print.vue";
 import Formation from "./Formation.vue";
+import HeroSection from "./HeroSection.vue";
 export default {
-  components: { Services, OutdoorAds, Foiling, Print, Formation },
+  components: { Services, OutdoorAds, Foiling, Print, Formation, HeroSection },
 
   data() {
     return {};

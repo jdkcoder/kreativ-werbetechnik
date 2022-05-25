@@ -17,7 +17,7 @@ h1 {
     background: var(--line-bg);
     height: 2.5px;
     width: 6rem;
-    bottom: -1.5rem;
+    bottom: -1.25rem;
     left: var(--l);
     transform: translateX(var(--x));
   }
