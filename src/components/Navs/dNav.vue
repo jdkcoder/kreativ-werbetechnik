@@ -110,7 +110,7 @@ nav {
           &.active {
             .sub-menu {
               overflow-y: auto;
-              height: 5.5rem;
+              height: 5rem;
               @apply ml-2 mt-2;
 
               &::-webkit-scrollbar {
@@ -150,7 +150,7 @@ export default {
   methods: {
     dropdownTriggered(e) {
       this.z = !this.z;
-      let slideDown = (el) => (el.style.height = `${el.scrollHeight}px`);
+      let slideDown = (el) => (el.style.height = `5.25rem`);
       if (this.z) {
         slideDown(e.currentTarget.closest(".dropdown"));
         e.currentTarget.closest(".dropdown").classList.add("active");

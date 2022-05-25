@@ -158,7 +158,7 @@ export default {
     },
     dropdownTriggered(e) {
       this.z = !this.z;
-      let slideDown = (el) => (el.style.height = `${el.scrollHeight}px`);
+      let slideDown = (el) => (el.style.height = `9.25rem`);
       if (this.z) {
         slideDown(e.currentTarget.closest(".dropdown"));
         e.currentTarget.closest(".dropdown").classList.add("active");
